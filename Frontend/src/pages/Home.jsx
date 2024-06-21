@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ProductCard from '../components/ProductCard'
 
 const Home = () => {
   return (
@@ -11,7 +12,16 @@ const Home = () => {
           More
         </Link>
       </h1>
-      <main></main>
+      <main>
+        <ProductCard
+          productId='asdfasd'
+          name='mac'
+          price={234}
+          stock={12}
+          handler={()=>{console.log('sdf')}}
+          photo='https://m.media-amazon.com/images/I/71jG+e7roXL._AC_UY218_.jpg'
+        />
+      </main>
     </div>
   )
 }
