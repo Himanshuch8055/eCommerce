@@ -8,6 +8,8 @@ const Search = lazy(() => import('./pages/Search'))
 const Cart = lazy(() => import('./pages/cart'))
 const Shipping = lazy(() => import('./pages/Shipping.jsx'))
 const Login = lazy(() => import('./pages/Login.jsx'))
+const Orders = lazy(() => import('./pages/Orders.jsx'))
+const OrderDetails = lazy(() => import('./pages/OrderDetails.jsx'))
 
 // Admin Router Importing........
 
@@ -43,6 +45,8 @@ const App = () => {
           {/* Logged In User Routes */}
           <Route>
             <Route path='/shipping' element={<Shipping />} />
+            <Route path='/orders' element={<Orders />} />
+            <Route path='/order/:id' element={<OrderDetails />} />
           </Route>
 
           {/* Admin Routes..... */}
