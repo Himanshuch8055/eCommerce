@@ -6,6 +6,8 @@ import Header from './components/Header'
 const Home = lazy(() => import('./pages/Home'))
 const Search = lazy(() => import('./pages/Search'))
 const Cart = lazy(() => import('./pages/cart'))
+const Shipping = lazy(() => import('./pages/Shipping.jsx'))
+const Login = lazy(() => import('./pages/Login.jsx'))
 
 // Admin Router Importing........
 
@@ -27,17 +29,25 @@ const TransactionManagement = lazy(() => import("./pages/admin/management/transa
 const App = () => {
   return (
     <Router>
-    {/* Header */}
-    <Header/>
+      {/* Header */}
+      <Header />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/search' element={<Search />} />
           <Route path='/cart' element={<Cart />} />
 
+          {/* Not Logged in Route */}
+          <Route path='/login' element={<Login />} />
+
+          {/* Logged In User Routes */}
+          <Route>
+            <Route path='/shipping' element={<Shipping />} />
+          </Route>
+
           {/* Admin Routes..... */}
 
-          <Route 
+          <Route
           // element={<ProtectedRoute isAuthenticated={true} adminRoute={true} isAdmin={true} />}
           >
             <Route path="/admin/dashboard" element={<Dashboard />} />
