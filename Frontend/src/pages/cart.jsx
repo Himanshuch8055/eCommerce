@@ -35,16 +35,29 @@ const cart = () => {
     }
   }, [couponCode])
 
+
   return (
     <div className='cart'>
+      {/* <div>
+        {data ? <div>{JSON.stringify(data)}</div> : <div>Loading...</div>}
+      </div> */}
       <main>
-        {
+        {/* {
           cartItems.length > 0 ? (cartItems.map((i, index) => (
             <CartItems key={index} cartItem={i} />
           ))) : (<h1>No Items Added</h1>)
-        }
+        } */}
+        {/* {
+          data.map(item => {
+            return(
+              <CartItems key={item.id}/>
+            )
+          })
+        } */}
+        <CartItems/>
       </main>
       <aside>
+        {/* {console.log(data)} */}
         <p>Subtotal: ₹{subTotal}</p>
         <p>shipping Charges: ₹{shippingCharges}</p>
         <p>Tax: ₹{tax}</p>
@@ -69,9 +82,9 @@ const cart = () => {
             )
           )
         }
-        {
+        {/* {
           cartItems.length > 0 && (<Link to={'/shipping'}>Checkout</Link>)
-        }
+        } */}
       </aside>
     </div>
   )
